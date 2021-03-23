@@ -3,7 +3,7 @@ using namespace std;
 
 #define ElemType int
 
-typedef struct{
+typedef struct LNode{
     ElemType data;
     struct LNode *next;
 }LNode,*LinkList;
@@ -34,3 +34,25 @@ LinkList List_HeadInsert(LinkList &L,int length){
     }
     return L;
 }
+
+//按位序插入
+bool ListInsert(LinkList &L,int i,ElemType e){
+    LNode *p;
+    int j=0;
+    p=L;//p指向头节点
+    if(i<1||p==NULL){
+        return false;
+    }
+    while(p!=NULL&&j<i-1){
+        p=p->next;
+        j++;
+    }
+    LNode *node = (LNode *)malloc(sizeof(LNode));
+    node->data=e;
+    node->next=p->next;
+    p->next=node;
+    return true;
+    
+
+}
+
