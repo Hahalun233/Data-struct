@@ -3,6 +3,7 @@
 #define ElemType int
 using namespace std;
 
+//静态链表，无需连续内存空间，data[]内元素随机存放。
 typedef struct{
     ElemType data[MaxSize];
     int length;
@@ -23,5 +24,4 @@ int main(){
         printf("data[%d]=%d\n",i,L.data[i]);
     }
     system("pause");
-    
 }
