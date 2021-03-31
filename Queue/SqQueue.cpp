@@ -6,7 +6,7 @@ typedef struct{
     ElemType data[Maxsize];
     int front,rear;
 }SqQueue;
-
+ 
 void InitQueue(SqQueue &Q){
     Q.rear=Q.front=0;
 }
@@ -19,10 +19,10 @@ bool EnQueue(SqQueue &Q,ElemType x){
     Q.data[Q.rear]=x;
     Q.rear=(Q.rear+1)%Maxsize;
     return true;
-}
+} 
 
 //出队
-bool DeQueue(SqQueue &Q){
+bool DeQueue(SqQueue &Q){ 
      if(Q.rear==Q.front){
          return false;
      }
@@ -30,4 +30,4 @@ bool DeQueue(SqQueue &Q){
      Q.front=(Q.front+1)%Maxsize;
      cout<<"the"<<x<<"was out!";
      return true;
-}
+}   
